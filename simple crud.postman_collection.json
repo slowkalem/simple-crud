@@ -1,0 +1,2281 @@
+{
+	"info": {
+		"_postman_id": "68f35299-5836-4792-9df4-222d95446ce8",
+		"name": "simple crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26596837",
+		"_collection_link": "https://fikriedan.postman.co/workspace/Team-Workspace~b27143a3-26e3-4e7a-8701-27f14934586c/collection/26596837-68f35299-5836-4792-9df4-222d95446ce8?action=share&source=collection_link&creator=26596837"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users/getById?userId=8d4ab697-dda8-46a0-b5e7-e7ca8088466f",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "8d4ab697-dda8-46a0-b5e7-e7ca8088466f",
+									"description": "Optional, kalo engga ada, pake userId dari token"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"Bsp1234!!\",\r\n    \"newPassword\": \"Bsp123!!\",\r\n    \"newPasswordConfirmation\": \"Bsp123!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users/changePassword",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "fullName",
+									"value": "Muhammad Alfat Furqon",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "alfat",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "082315456102",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "muhammadalfat.ma@gmail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users/updateProfile",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create One (Admin)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "fullName",
+									"value": "Admin 99",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin99",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "087805723942",
+									"type": "text"
+								},
+								{
+									"key": "groupId",
+									"value": "Super Admin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin99@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Bsp123!!",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirmation",
+									"value": "Bsp123!!",
+									"type": "text"
+								},
+								{
+									"key": "nrp",
+									"value": "admin99",
+									"type": "text"
+								},
+								{
+									"key": "satwil",
+									"value": "POLDA METRO JAYA",
+									"type": "text"
+								},
+								{
+									"key": "satker",
+									"value": "POLRES METRO TANGERANG KOTA",
+									"type": "text"
+								},
+								{
+									"key": "pangkat",
+									"value": "AKBP",
+									"type": "text"
+								},
+								{
+									"key": "jabatan",
+									"value": "Penyidik",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "8d4ab697-dda8-46a0-b5e7-e7ca8088466f",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "User 1",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test_user2",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "082315456102",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "aldirarashadmugi12@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "nrp",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "satwil",
+									"value": "POLDA METRO JAYA",
+									"type": "text"
+								},
+								{
+									"key": "satker",
+									"value": "POLRES METRO TANGERANG KOTA",
+									"type": "text"
+								},
+								{
+									"key": "pangkat",
+									"value": "AKBP",
+									"type": "text"
+								},
+								{
+									"key": "jabatan",
+									"value": "Penyidik",
+									"type": "text"
+								},
+								{
+									"key": "groupId",
+									"value": "Analis",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/BackupD/Code/BSP/04-SiberCaseManagement/backend/test/controller/file_input/profile-pic.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status (Admin)",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "000ab4a5-8d38-4aba-ac2d-0abbc5d3b268",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users/status",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User (Admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/users?orderBy=full_name",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "fullName",
+									"value": "Unit",
+									"disabled": true
+								},
+								{
+									"key": "nrp",
+									"value": "slow",
+									"disabled": true
+								},
+								{
+									"key": "groupId",
+									"value": "Admin",
+									"disabled": true
+								},
+								{
+									"key": "satwil",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "satker",
+									"value": "POL",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "full_name",
+									"description": "nrp, full_name"
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"disabled": true
+								},
+								{
+									"key": "all",
+									"value": "admin",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID (Admin)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userId",
+									"value": "609b0177-ac56-486a-afc1-6fea334dc28d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/users",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"unit_testx\",\r\n    \"password\": \"Bsp123!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/login",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/logout",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "alfatfurqon.af@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "muhammadalfat.ma@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "aldirarashadmugi@gmail.com",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "muhammad.alfat.tif19@polban.ac.id",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/sendOTP",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"sendOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify OTP & Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "muhammadalfat.ma@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "isVerifyOTP",
+									"value": "false",
+									"description": ".true., jika verify OTP || .false., jika reset password",
+									"type": "text"
+								},
+								{
+									"key": "OTP",
+									"value": "29857",
+									"description": "hanya diisi ketika verify OTP",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Bsp123!!",
+									"description": "hanya diisi ketika reset password",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirmation",
+									"value": "Bsp123!!",
+									"description": "hanya diisi ketika reset password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/auth/resetPassword",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Function",
+			"item": [
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Notification\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/functions",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"functions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/functions/getById?functionId=e69e5098-853b-4622-9811-56e9b6714727",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"functions",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "functionId",
+									"value": "e69e5098-853b-4622-9811-56e9b6714727"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "functionId",
+									"value": "991d5f58-fe2e-4cf1-ae34-4f57830e9623",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/functions",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"functions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Function",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/functions?perPage=1000&page=1",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"functions"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "1000"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "name",
+									"value": "au",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"functionId\": \"6ccb767e-a37a-415f-850c-8dd67fca6929\",\r\n    \"name\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/functions",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"functions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group",
+			"item": [
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupId\": \"Role 2\",\r\n    \"name\": \"Role 2\",\r\n    \"description\": \"Role 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/groups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/groups/getById?functionId=e69e5098-853b-4622-9811-56e9b6714727",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"groups",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "functionId",
+									"value": "e69e5098-853b-4622-9811-56e9b6714727"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "groupId",
+									"value": "Role 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/groups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/groups?dir=asc",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "9",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "rol",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "rol",
+									"disabled": true
+								},
+								{
+									"key": "all",
+									"value": "admin",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"description": "tidak diperlukan (sudah orderBy name by default)",
+									"disabled": true
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"description": "asc, desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"groupId\": \"Role 2\",\r\n    \"name\": \"Role 2\",\r\n    \"description\": \"Role 22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/groups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "Get Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/notification",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification"
+							],
+							"query": [
+								{
+									"key": "notificationId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "isRead",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "dir",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"9589cbea-7af8-42c8-b742-c956788ed288\",\r\n    \"groupId\": \"Admin\",\r\n    \"message\": \"Test Notification\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/notification",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notificationId\": \"84918a4e-cbf3-4624-a8cb-ddbbb6644975\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/notification/read",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification",
+								"read"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Read All Notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"19ad3f36-a253-46bd-b6e0-215d125d1d05\",\r\n    \"groupId\": \"User\",\r\n    \"message\": \"Test Notification\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/notification/read-all",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification",
+								"read-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count Unread Notification",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/notification/count",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"notification",
+								"count"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9a674d02-3559-400d-a2c7-e438e218590d",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission API",
+			"item": [
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"functionId\": \"4d82ba3c-333b-40c9-9584-1c3d974d1169\",\r\n    \"action\": \"DELETE\",\r\n    \"HTTPMethod\": \"DELETE\",\r\n    \"APIURLName\": \"/lampiran\",\r\n    \"status\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apis",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/apis/getById?permissionAPIId=a849c7d2-a8a6-475d-9f77-134a416cedb7",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apis",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "permissionAPIId",
+									"value": "a849c7d2-a8a6-475d-9f77-134a416cedb7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "permissionAPIId",
+									"value": "969fb0e0-1fb9-4884-9a9b-cb4f36fd9997",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apis",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apis"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Permission API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/apis?perPage=1000&page=1&functionName=system",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apis"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "1000"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "functionId",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "functionName",
+									"value": "system"
+								},
+								{
+									"key": "action",
+									"value": "cre",
+									"disabled": true
+								},
+								{
+									"key": "HTTPMethod",
+									"value": "p",
+									"disabled": true
+								},
+								{
+									"key": "APIURLName",
+									"value": "change",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permissionAPIId\": \"a2c97056-19e8-401e-a292-62a61f499990\",\r\n    \"functionId\": \"60d13dc8-b00e-4e69-ba5c-585e2bd48d35\",\r\n    \"functionName\": \"User\",\r\n    \"action\": \"UPDATE\",\r\n    \"HTTPMethod\": \"PUT\",\r\n    \"APIURLName\": \"/users/changePassword\",\r\n    \"status\": \"Active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apis",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apis"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission API Group",
+			"item": [
+				{
+					"name": "Create One",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permissionAPIId\": \"70e06426-58f9-4dc1-8775-1733f6e28408\",\r\n    \"groupId\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Many",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"groupId\": \"Super Admin\",\r\n        \"permissionAPIId\": \"61b13ca5-5509-48b1-a611-73de38d38115\"\r\n    },\r\n    {\r\n        \"groupId\": \"Super Admin\",\r\n        \"permissionAPIId\": \"05bf44be-8b5e-4d3a-a073-09159ebce2ce\"\r\n    },\r\n    {\r\n        \"groupId\": \"Admin\",\r\n        \"permissionAPIId\": \"61b13ca5-5509-48b1-a611-73de38d38115\"\r\n    },\r\n    {\r\n        \"groupId\": \"Admin\",\r\n        \"permissionAPIId\": \"05bf44be-8b5e-4d3a-a073-09159ebce2ce\"\r\n    },\r\n    {\r\n        \"groupId\": \"Admin\",\r\n        \"permissionAPIId\": \"a2c97056-19e8-401e-a292-62a61f499990\"\r\n    }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups/bulkCreate",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups",
+								"bulkCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups/getById?permissionAPIGroupId=2e115a75-98c6-4719-a622-2154da39e35e",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups",
+								"getById"
+							],
+							"query": [
+								{
+									"key": "permissionAPIGroupId",
+									"value": "2e115a75-98c6-4719-a622-2154da39e35e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "permissionAPIGroupId",
+									"value": "2e115a75-98c6-4719-a622-2154da39e35e",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Many",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"permissionAPIGroupId\": \"ffb9cbbf-7ada-43ee-ac40-b5e4d4986538\"\r\n    },\r\n    {\r\n        \"permissionAPIGroupId\": \"822f5ef3-8d10-46d1-8495-037a52e694f7\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups/bulkDelete",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups",
+								"bulkDelete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Permission API Group",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups?groupId=Admin&all=CREATE",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups"
+							],
+							"query": [
+								{
+									"key": "perPage",
+									"value": "1000",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "functionName",
+									"value": "user",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "cre",
+									"disabled": true
+								},
+								{
+									"key": "HTTPMethod",
+									"value": "p",
+									"disabled": true
+								},
+								{
+									"key": "APIURLName",
+									"value": "syste",
+									"disabled": true
+								},
+								{
+									"key": "groupId",
+									"value": "Admin"
+								},
+								{
+									"key": "all",
+									"value": "CREATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"permissionAPIGroupId\": \"2e115a75-98c6-4719-a622-2154da39e35e\",\r\n    \"permissionAPIId\": \"70e06426-58f9-4dc1-8775-1733f6e28408\",\r\n    \"groupId\": \"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/apiGroups",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"apiGroups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System Master",
+			"item": [
+				{
+					"name": "Get All Systems",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/systems?orderBy=status&perPage=200",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							],
+							"query": [
+								{
+									"key": "sys_cat",
+									"value": "null",
+									"disabled": true
+								},
+								{
+									"key": "sys_sub_cat",
+									"value": "jenis_kelamin",
+									"disabled": true
+								},
+								{
+									"key": "adnawd",
+									"value": "saepu",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "status",
+									"description": "sysCat, sysSubCat, sysCode, value, remark, status"
+								},
+								{
+									"key": "dir",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "all",
+									"value": "file",
+									"disabled": true
+								},
+								{
+									"key": "perPage",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail System With Correct Keys",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{bsp}}/api/v1/systems?sys_cat=common&orderBy=sys_cat",
+							"host": [
+								"{{bsp}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							],
+							"query": [
+								{
+									"key": "sys_cat",
+									"value": "common"
+								},
+								{
+									"key": "sys_sub_cat",
+									"value": "flag",
+									"disabled": true
+								},
+								{
+									"key": "sys_code",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "sys_cat"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail System With Invalid Keys",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/systems?sys_cat=common&sys_sub_cat=jenis_kelamin&sys_code=1",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							],
+							"query": [
+								{
+									"key": "sys_cat",
+									"value": "common"
+								},
+								{
+									"key": "sys_sub_cat",
+									"value": "jenis_kelamin"
+								},
+								{
+									"key": "sys_code",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail System Order By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/systems?orderBy=sys_cat",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							],
+							"query": [
+								{
+									"key": "orderBy",
+									"value": "sys_cat"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add System With Complete Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sysCat",
+									"value": "Log",
+									"type": "text"
+								},
+								{
+									"key": "sysSubCat",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "sysCode",
+									"value": "LOG",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "Test Add Log",
+									"type": "text"
+								},
+								{
+									"key": "remark",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add System With Duplicate Keys",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sys_cat",
+									"value": "{{sys_cat}}",
+									"type": "text"
+								},
+								{
+									"key": "sys_sub_cat",
+									"value": "{{sys_sub_cat}}",
+									"type": "text"
+								},
+								{
+									"key": "sys_code",
+									"value": "{{sys_code}}",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "{{value}}",
+									"type": "text"
+								},
+								{
+									"key": "remark",
+									"value": "{{remark}}",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "{{status}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add System Without Value Property",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sys_cat",
+									"value": "{{sys_cat}}",
+									"type": "text"
+								},
+								{
+									"key": "sys_sub_cat",
+									"value": "{{sys_sub_cat}}",
+									"type": "text"
+								},
+								{
+									"key": "sys_code",
+									"value": "{{sys_code}}",
+									"type": "text"
+								},
+								{
+									"key": "remark",
+									"value": "{{remark}}",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "{{status}}",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update System With Complete Data",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sysCat",
+									"value": "COMMON",
+									"type": "text"
+								},
+								{
+									"key": "sysSubCat",
+									"value": "STATUS",
+									"type": "text"
+								},
+								{
+									"key": "sysCode",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "value",
+									"value": "Active",
+									"type": "text"
+								},
+								{
+									"key": "remark",
+									"value": "Active",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "Active",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete System With Correct Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"sysCat\":\"LOG\",\r\n        \"sysSubCat\":\"LOG\",\r\n        \"sysCode\":\"13\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete System With More Than One Keys",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    \r\n    {\r\n        \"sysCat\":\"LOG\",\r\n        \"sysSubCat\":\"LOG\",\r\n        \"sysCode\":\"14\"\r\n    },\r\n    {\r\n        \"sysCat\":\"LOG\",\r\n        \"sysSubCat\":\"LOG\",\r\n        \"sysCode\":\"15\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/systems",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"systems"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Combo",
+			"item": [
+				{
+					"name": "GetGroupCombo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/group",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"group"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "qwerqwer",
+									"disabled": true
+								},
+								{
+									"key": "label",
+									"value": "qwerqwer",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFunctionCombo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/function?value&label",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"function"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": null
+								},
+								{
+									"key": "label",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStatusCombo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/status?value=&label",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"status"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": ""
+								},
+								{
+									"key": "label",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Maximum File Size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/fileSize",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"fileSize"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter System Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/syscat?sysCat=&sysSubCat=&sysCode=",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"syscat"
+							],
+							"query": [
+								{
+									"key": "sysCat",
+									"value": ""
+								},
+								{
+									"key": "sysSubCat",
+									"value": ""
+								},
+								{
+									"key": "sysCode",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter System Sub Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/syssubcat?sysCat=&sysSubCat=&sysCode=",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"syssubcat"
+							],
+							"query": [
+								{
+									"key": "sysCat",
+									"value": ""
+								},
+								{
+									"key": "sysSubCat",
+									"value": ""
+								},
+								{
+									"key": "sysCode",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter System Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/combos/syscode?sysCat=&sysSubCat=&sysCode=",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"combos",
+								"syscode"
+							],
+							"query": [
+								{
+									"key": "sysCat",
+									"value": ""
+								},
+								{
+									"key": "sysSubCat",
+									"value": ""
+								},
+								{
+									"key": "sysCode",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "Get Log",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/log",
+							"host": [
+								"localhost:3000"
+							],
+							"path": [
+								"api",
+								"v1",
+								"log"
+							],
+							"query": [
+								{
+									"key": "logId",
+									"value": "7034bb0b-fc22-48ed-8b08-85cdba080751",
+									"disabled": true
+								},
+								{
+									"key": "createdDateBegin",
+									"value": "2023-03-31",
+									"disabled": true
+								},
+								{
+									"key": "createdDateEnd",
+									"value": "2023-03-31",
+									"disabled": true
+								},
+								{
+									"key": "createdBy",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "updatedDateBegin",
+									"value": "2023-03-31",
+									"disabled": true
+								},
+								{
+									"key": "updatedDateEnd",
+									"value": "2023-03-31",
+									"disabled": true
+								},
+								{
+									"key": "updatedBy",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "screen",
+									"value": "Log",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "logged",
+									"disabled": true
+								},
+								{
+									"key": "orderBy",
+									"value": "action",
+									"disabled": true
+								},
+								{
+									"key": "dir",
+									"value": "asc",
+									"disabled": true
+								},
+								{
+									"key": "action",
+									"value": "testing",
+									"disabled": true
+								},
+								{
+									"key": "screen",
+									"value": "testing",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "testing",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
