@@ -1,0 +1,9 @@
+node_modules
+coverage
+/*.env.stg
+/*.env.prod
+/*.log
+/public/images
+/public/files
+/public/*
+/static/*
